@@ -4,7 +4,7 @@ const bookshelf = require('../../app/db/bookshelf')
 const User = require('../../app/models/user')
 
 const expect = chai.expect
-
+/*
 const mockUser = {
   email: 'email@email.com',
   name: 'Name',
@@ -34,3 +34,4 @@ describe('User', function() {
       expect(user.get('id')).to.be.a('number')
   })
 })
+*/
