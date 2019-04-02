@@ -1,5 +1,5 @@
 const chai = require('chai')
-
+const supertest = require('supertest')
 const bookshelf = require('../../app/db/bookshelf')
 const User = require('../../app/models/user')
 
