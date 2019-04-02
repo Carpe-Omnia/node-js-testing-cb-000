@@ -5,7 +5,7 @@ const app = require('../app')
 
 const expect = chai.expect
 let server
-
+/*
 before(function(done) {
   return app.up().then(_server => {
     server = _server
@@ -40,7 +40,7 @@ describe('app', function() {
           expect(400, done)
       })
 
-      /** This is new! */
+
       it('succeeds with valid name, username, and email', function(done) {
         supertest(server).
           post('/user').
@@ -55,3 +55,4 @@ describe('app', function() {
     })
   })
 })
+*/
