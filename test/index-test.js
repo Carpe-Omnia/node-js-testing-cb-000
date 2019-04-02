@@ -16,11 +16,42 @@ before(function(done) {
 after(function() {
   server.close()
 })
-
+describe('/user', function() {
+  describe('POST', function() {
+    it('fails with an empty request body', function(done) {
+      supertest(app).
+        post('/user').
+        expect(400, done)
+    })
+  })
+})
 describe('app', function() {
   describe('up', function() {
     it('is a function', function() {
       expect(app.up).to.be.an.instanceof(Function)
+    })
+  })
+ 
+  describe('/user', function() {
+    describe('POST', function() {
+      it('fails with an empty request body', function(done) {
+        supertest(server).
+          post('/user').
+          expect(400, done)
+      })
+ 
+      /** This is new! */
+      it('succeeds with valid name, username, and email', function(done) {
+        supertest(server).
+          post('/user').
+          send({
+            email: 'test@email.com',
+            name: 'testName',
+            username: 'testUsername'
+          }).
+          set('content-type', 'application/json').
+          expect(200, done)
+      })
     })
   })
 })
